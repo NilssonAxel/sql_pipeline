@@ -14,7 +14,7 @@ GO
 CREATE OR ALTER PROCEDURE silver.load_silver_category AS
 BEGIN
 /*###############################################################################################
-Script:        DataWarehouse – Load data into silver.category
+Script:        DataWarehouse ï¿½ Load data into silver.category
 Author:        Axel Nilsson
 Description:   This script loads data from bronze.erp_px_cat_g1v2.
                The data is inserted into silver.category.

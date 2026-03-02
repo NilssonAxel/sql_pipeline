@@ -10,17 +10,17 @@ param(
 )
 
 Write-Host "################################################################################" -ForegroundColor Green
-Invoke-Sqlcmd -ServerInstance $ServerInstance -InputFile ".\sql_scripts\01_db\init_db.sql" -Verbose
+Invoke-Sqlcmd -ServerInstance $ServerInstance -TrustServerCertificate -InputFile ".\sql_scripts\01_db\init_db.sql" -Verbose
 Write-Host "################################################################################" -ForegroundColor Green
-Invoke-Sqlcmd -ServerInstance $ServerInstance -InputFile ".\sql_scripts\02_etl\init_etl.sql" -Verbose
+Invoke-Sqlcmd -ServerInstance $ServerInstance -TrustServerCertificate -InputFile ".\sql_scripts\02_etl\init_etl.sql" -Verbose
 Write-Host "################################################################################" -ForegroundColor Green
-Invoke-Sqlcmd -ServerInstance $ServerInstance -InputFile ".\sql_scripts\03_landing\init_landing.sql" -Verbose
+Invoke-Sqlcmd -ServerInstance $ServerInstance -TrustServerCertificate -InputFile ".\sql_scripts\03_landing\init_landing.sql" -Verbose
 Write-Host "################################################################################" -ForegroundColor Green
-Invoke-Sqlcmd -ServerInstance $ServerInstance -InputFile ".\sql_scripts\04_bronze\init_bronze.sql" -Verbose
+Invoke-Sqlcmd -ServerInstance $ServerInstance -TrustServerCertificate -InputFile ".\sql_scripts\04_bronze\init_bronze.sql" -Verbose
 Write-Host "################################################################################" -ForegroundColor Green
-Invoke-Sqlcmd -ServerInstance $ServerInstance -InputFile ".\sql_scripts\05_silver\init_silver.sql" -Verbose
+Invoke-Sqlcmd -ServerInstance $ServerInstance -TrustServerCertificate -InputFile ".\sql_scripts\05_silver\init_silver.sql" -Verbose
 Write-Host "################################################################################" -ForegroundColor Green
-Invoke-Sqlcmd -ServerInstance $ServerInstance -InputFile ".\sql_scripts\06_gold\init_gold_views.sql" -Verbose
+Invoke-Sqlcmd -ServerInstance $ServerInstance -TrustServerCertificate -InputFile ".\sql_scripts\06_gold\init_gold_views.sql" -Verbose
 Write-Host "################################################################################" -ForegroundColor Green
-Invoke-Sqlcmd -ServerInstance $ServerInstance -InputFile ".\sql_scripts\06_gold\init_dimdate.sql" -Verbose
+Invoke-Sqlcmd -ServerInstance $ServerInstance -TrustServerCertificate -InputFile ".\sql_scripts\06_gold\init_dimdate.sql" -Verbose
 Write-Host "################################################################################" -ForegroundColor Green

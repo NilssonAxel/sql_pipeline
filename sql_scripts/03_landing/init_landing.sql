@@ -1,4 +1,45 @@
+/*###############################################################################################
+Script:        DataWarehousev1 � Table setup for schema: landing
+Author:        Axel Nilsson
+Description:   This script creates tables for the schema landing.
+               Only in case database named 'DataWarehousev1' exists.
+
+Input:
+
+   * None
+
+Output:
+
+   - Creates the following:
+
+       * Table___landing.crm_cust_info
+       * Table___landing.crm_prd_info
+       * Table___landing.crm_sales_details
+       * Table___landing.erp_cust_az12
+       * Table___landing.erp_loc_a101
+       * Table___landing.erp_px_cat_g1v2
+
+Dependencies:
+
+   * Database: DataWarehousev1
+   * Schema: landing
+
+Notes:
+
+   * Idempotent
+
+###############################################################################################*/
+
+/********************************************************
+Initializing script
+********************************************************/
+
 USE DataWarehousev1;
+
+PRINT '**********************************************************'
+PRINT 'Switching database. Current database in use: ' + CAST(DB_NAME() AS VARCHAR(50))
+PRINT '**********************************************************'
+PRINT ''
 
 DECLARE @script_time_started DATETIME2, @script_time_ended DATETIME2;
 

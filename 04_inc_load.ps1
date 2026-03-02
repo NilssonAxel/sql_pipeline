@@ -15,15 +15,15 @@
 
 
 Write-Host "################################################################################" -ForegroundColor Green
-Invoke-Sqlcmd -ServerInstance $ServerInstance -Database "DataWarehousev1" -Query "EXEC landing.load_landing @path_crm='$dataset_path_crm', @path_erp='$dataset_path_erp'" -Verbose
+Invoke-Sqlcmd -ServerInstance $ServerInstance -Database "DataWarehousev1" -TrustServerCertificate -Query "EXEC landing.load_landing @path_crm='$dataset_path_crm', @path_erp='$dataset_path_erp'" -Verbose
 Write-Host "################################################################################" -ForegroundColor Green
-Invoke-Sqlcmd -ServerInstance $ServerInstance -Database "DataWarehousev1" -Query "EXEC bronze.load_bronze" -Verbose
+Invoke-Sqlcmd -ServerInstance $ServerInstance -Database "DataWarehousev1" -TrustServerCertificate -Query "EXEC bronze.load_bronze" -Verbose
 Write-Host "################################################################################" -ForegroundColor Green
-Invoke-Sqlcmd -ServerInstance $ServerInstance -Database "DataWarehousev1" -Query "EXEC silver.load_silver_customer" -Verbose
+Invoke-Sqlcmd -ServerInstance $ServerInstance -Database "DataWarehousev1" -TrustServerCertificate -Query "EXEC silver.load_silver_customer" -Verbose
 Write-Host "################################################################################" -ForegroundColor Green
-Invoke-Sqlcmd -ServerInstance $ServerInstance -Database "DataWarehousev1" -Query "EXEC silver.load_silver_product" -Verbose
+Invoke-Sqlcmd -ServerInstance $ServerInstance -Database "DataWarehousev1" -TrustServerCertificate -Query "EXEC silver.load_silver_product" -Verbose
 Write-Host "################################################################################" -ForegroundColor Green
-Invoke-Sqlcmd -ServerInstance $ServerInstance -Database "DataWarehousev1" -Query "EXEC silver.load_silver_category" -Verbose
+Invoke-Sqlcmd -ServerInstance $ServerInstance -Database "DataWarehousev1" -TrustServerCertificate -Query "EXEC silver.load_silver_category" -Verbose
 Write-Host "################################################################################" -ForegroundColor Green
-Invoke-Sqlcmd -ServerInstance $ServerInstance -Database "DataWarehousev1" -Query "EXEC silver.load_silver_sales" -Verbose
+Invoke-Sqlcmd -ServerInstance $ServerInstance -Database "DataWarehousev1" -TrustServerCertificate -Query "EXEC silver.load_silver_sales" -Verbose
 Write-Host "################################################################################" -ForegroundColor Green

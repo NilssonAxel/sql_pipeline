@@ -11,15 +11,15 @@ param(
 
 
 Write-Host "################################################################################" -ForegroundColor Green
-Invoke-Sqlcmd -ServerInstance $ServerInstance -InputFile ".\sql_scripts\03_landing\load_landing.sql" -Verbose
+Invoke-Sqlcmd -ServerInstance $ServerInstance -TrustServerCertificate -InputFile ".\sql_scripts\03_landing\load_landing.sql" -Verbose
 Write-Host "################################################################################" -ForegroundColor Green
-Invoke-Sqlcmd -ServerInstance $ServerInstance -InputFile ".\sql_scripts\04_bronze\load_bronze.sql" -Verbose
+Invoke-Sqlcmd -ServerInstance $ServerInstance -TrustServerCertificate -InputFile ".\sql_scripts\04_bronze\load_bronze.sql" -Verbose
 Write-Host "################################################################################" -ForegroundColor Green
-Invoke-Sqlcmd -ServerInstance $ServerInstance -InputFile ".\sql_scripts\05_silver\inc_load\inc_load_silver_customer.sql" -Verbose
+Invoke-Sqlcmd -ServerInstance $ServerInstance -TrustServerCertificate -InputFile ".\sql_scripts\05_silver\inc_load\inc_load_silver_customer.sql" -Verbose
 Write-Host "################################################################################" -ForegroundColor Green
-Invoke-Sqlcmd -ServerInstance $ServerInstance -InputFile ".\sql_scripts\05_silver\inc_load\inc_load_silver_product.sql" -Verbose
+Invoke-Sqlcmd -ServerInstance $ServerInstance -TrustServerCertificate -InputFile ".\sql_scripts\05_silver\inc_load\inc_load_silver_product.sql" -Verbose
 Write-Host "################################################################################" -ForegroundColor Green
-Invoke-Sqlcmd -ServerInstance $ServerInstance -InputFile ".\sql_scripts\05_silver\inc_load\inc_load_silver_category.sql" -Verbose
+Invoke-Sqlcmd -ServerInstance $ServerInstance -TrustServerCertificate -InputFile ".\sql_scripts\05_silver\inc_load\inc_load_silver_category.sql" -Verbose
 Write-Host "################################################################################" -ForegroundColor Green
-Invoke-Sqlcmd -ServerInstance $ServerInstance -InputFile ".\sql_scripts\05_silver\inc_load\inc_load_silver_sales.sql" -Verbose
+Invoke-Sqlcmd -ServerInstance $ServerInstance -TrustServerCertificate -InputFile ".\sql_scripts\05_silver\inc_load\inc_load_silver_sales.sql" -Verbose
 Write-Host "################################################################################" -ForegroundColor Green

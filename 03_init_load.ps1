@@ -15,15 +15,15 @@
 
 
 Write-Host "################################################################################" -ForegroundColor Green
-Invoke-Sqlcmd -ServerInstance $ServerInstance -Database "DataWarehousev1" -Query "EXEC landing.load_landing @path_crm='$dataset_path_crm', @path_erp='$dataset_path_erp'" -Verbose
+Invoke-Sqlcmd -ServerInstance $ServerInstance -Database "DataWarehousev1" -TrustServerCertificate -Query "EXEC landing.load_landing @path_crm='$dataset_path_crm', @path_erp='$dataset_path_erp'" -Verbose
 Write-Host "################################################################################" -ForegroundColor Green
-Invoke-Sqlcmd -ServerInstance $ServerInstance -Database "DataWarehousev1" -Query "EXEC bronze.load_bronze" -Verbose
+Invoke-Sqlcmd -ServerInstance $ServerInstance -Database "DataWarehousev1" -TrustServerCertificate -Query "EXEC bronze.load_bronze" -Verbose
 Write-Host "################################################################################" -ForegroundColor Green
-Invoke-Sqlcmd -ServerInstance $ServerInstance -InputFile ".\sql_scripts\05_silver\init_load\init_load_silver_customer.sql" -Verbose
+Invoke-Sqlcmd -ServerInstance $ServerInstance -TrustServerCertificate -InputFile ".\sql_scripts\05_silver\init_load\init_load_silver_customer.sql" -Verbose
 Write-Host "################################################################################" -ForegroundColor Green
-Invoke-Sqlcmd -ServerInstance $ServerInstance -InputFile ".\sql_scripts\05_silver\init_load\init_load_silver_product.sql" -Verbose
+Invoke-Sqlcmd -ServerInstance $ServerInstance -TrustServerCertificate -InputFile ".\sql_scripts\05_silver\init_load\init_load_silver_product.sql" -Verbose
 Write-Host "################################################################################" -ForegroundColor Green
-Invoke-Sqlcmd -ServerInstance $ServerInstance -InputFile ".\sql_scripts\05_silver\init_load\init_load_silver_category.sql" -Verbose
+Invoke-Sqlcmd -ServerInstance $ServerInstance -TrustServerCertificate -InputFile ".\sql_scripts\05_silver\init_load\init_load_silver_category.sql" -Verbose
 Write-Host "################################################################################" -ForegroundColor Green
-Invoke-Sqlcmd -ServerInstance $ServerInstance -InputFile ".\sql_scripts\05_silver\init_load\init_load_silver_sales.sql" -Verbose
+Invoke-Sqlcmd -ServerInstance $ServerInstance -TrustServerCertificate -InputFile ".\sql_scripts\05_silver\init_load\init_load_silver_sales.sql" -Verbose
 Write-Host "################################################################################" -ForegroundColor Green
